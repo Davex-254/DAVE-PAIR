@@ -1,5 +1,5 @@
 {
-    "description": "dave-session",
+    "description": "Dave-session",
     "main": "./index.js",
   "engines" : { 
     "npm" : ">=9.7.2",
@@ -8,10 +8,12 @@
     "scripts": {
     "start": "node index.js"
   },
-  "author": "davr",
+  "author": "Gifted Dave",
   "license": "GPL-3.0 license",
   "dependencies": {
-   "@angstvorfrauen/baileys": "*",
+    "baileys-pro": "latest",
+    "maher-zubair-baileys": "^6.6.5",
+            "@whiskeysockets/baileys":"npm:wileys",
     "qrcode": "^1.5.3",
     "awesome-phonenumber": "^2.64.0",
     "pino": "^8.1.0",
@@ -20,6 +22,7 @@
     "pastebin-js": "^1.0.6",
     "express": "^4.18.1",
     "path": "^0.12.7",
-    "jimp": "latest"
+    "baileys-elite" : "latest",
+    "jimp": "^0.16.13"
    }
 }
