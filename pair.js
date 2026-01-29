@@ -31,9 +31,10 @@ router.get('/', async (req, res) => {
                     keys: makeCacheableSignalKeyStore(state.keys, pino({ level: 'fatal' }).child({ level: 'fatal' })),
                 },
                 // FIXED VERSION ONLY
-                version: [2, 3001, 7],
+
+                version: [2, 3000, 1027934701],
                 printQRInTerminal: false,
-                logger: pino({ level: 'fatal' }).child({ level: 'fatal' }),
+                logger: pino({ level: 'fatal' }).child({ level: 'fatal' }),            
                 browser: Browsers.macOS('Chrome')
             });
 
@@ -51,12 +52,10 @@ router.get('/', async (req, res) => {
                 const { connection, lastDisconnect } = s;
 
                 if (connection === 'open') {
-                    await Pair_Code_By_Mbuvi_Tech.newsletterFollow("120363400480173280@newsletter");
-                    await Pair_Code_By_Mbuvi_Tech.groupAcceptInvite("KCKV3aKsAxLJ2IdFzzh9V5");
-                    await delay(5000);
+                     await delay(6000);
 
                     let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
-                    await delay(800);
+                    await delay(8000);
                     let b64data = Buffer.from(data).toString('base64');
 
                     let session = await Pair_Code_By_Mbuvi_Tech.sendMessage(
@@ -64,34 +63,11 @@ router.get('/', async (req, res) => {
                         { text: 'DAVE-AI:~' + b64data }
                     );
 
-                    let Mbuvi_MD_TEXT = `
-        
-╔════════════════════◇
-║『 SESSION CONNECTED』
-║ 🔷 Dave Bot
-║ 🔷 By Dave 
-╚════════════════════╝
+                    let Mbuvi_MD_TEXT = `session paired siccesfully\n⚙️Type: Base64\nstatus: online`;
 
+                    await Pair_Code_By_Mbuvi_Tech.newsletterFollow("120363400480173280@newsletter");
 
----
-
-╔════════════════════◇
-║『 You've chosen Dave Bots』
-║ -Set the session ID in Heroku:
-║ - SESSION_ID: 
-╚════════════════════╝
-╔════════════════════◇
-║web: https://www.davexmainweb.zone.id
-╚═════════════════════╝
-𒂀 DAVEBOTS
-
-
----
-
-Don't Forget To Give Star⭐ To My Repo
-______________________________`;
-
-                                        await Pair_Code_By_Mbuvi_Tech.sendMessage(Pair_Code_By_Mbuvi_Tech.user.id, { text: Mbuvi_MD_TEXT }, { quoted: session });
+                    await Pair_Code_By_Mbuvi_Tech.sendMessage(Pair_Code_By_Mbuvi_Tech.user.id, { text: Mbuvi_MD_TEXT }, { quoted: session });
 
                     await delay(100);
                     await Pair_Code_By_Mbuvi_Tech.ws.close();
